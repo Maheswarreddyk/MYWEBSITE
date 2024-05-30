@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute of Advanced Studies, India (IASI)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        ul li ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        ul li ul li {
+            list-style-type: circle;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .container {
+                width: 95%;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Institute of Advanced Studies, India (IASI)</h1>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Academic Information</h2>
+            <h3>Programs and Courses Offered:</h3>
+            <ul>
+                <li><strong>School Programs:</strong>
+                    <ul>
+                        <li>Primary School: Grades 1 to 5</li>
+                        <li>Middle School: Grades 6 to 8</li>
+                        <li>High School: Grades 9 to 12 with streams in Science, Commerce, and Humanities</li>
+                    </ul>
+                </li>
+                <li><strong>College Programs:</strong>
+                    <ul>
+                        <li>Undergraduate Programs: B.Tech, B.Sc, B.Com, B.A</li>
+                        <li>Postgraduate Programs: M.Tech, M.Sc, M.Com, M.A, MBA</li>
+                        <li>Doctoral Programs: Ph.D. in various disciplines</li>
+                        <li>Specializations: Engineering, Science, Commerce, Arts, Management</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Accreditations and Affiliations:</h3>
+            <ul>
+                <li>Accredited by NAAC with an 'A+' grade</li>
+                <li>Affiliated with the University Grants Commission (UGC)</li>
+                <li>Recognized by the Central Board of Secondary Education (CBSE) for school programs</li>
+                <li>International affiliations with universities in the USA, UK, and Australia</li>
+            </ul>
+            <H3>Images</H3>
+            <div class="gallery">
+                <img src="gkhs1.jfif" alt="GKHS">
+                <img src="gkhs2.jfif" alt="GKSH2">
+                <img src="gkhs3.jfif" alt="Image 3">
+                <!-- Add more images here -->
+              </div>
+              
+             <H3>Videos</H3>
+              <div class="video">
+                <video width="320" height="240" controls>
+                  <source src="GHKS_VIDEO1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <video width="320" height="240" controls>
+                    <source src="GKHS_VIDEO2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+              </div>
+              
+              <!-- Popup for Image -->
+              <div id="imagePopup" class="popup">
+                <div class="popup-content">
+                  <img id="" src="" alt="Popup Image">
+                </div>
+              </div>
+              
+              <script>
+                // JavaScript for Image Popup
+                const images = document.querySelectorAll('.gallery img');
+                const popup = document.getElementById('imagePopup');
+                const popupImage = document.getElementById('popupImage');
+              
+                images.forEach(image => {
+                  image.addEventListener('click', () => {
+                    popupImage.src = image.src;
+                    popup.style.display = 'block';
+                  });
+                });
+              
+                popup.addEventListener('click', () => {
+                  popup.style.display = 'none';
+                });
+              </script>
+            <h3>Faculty:</h3>
+            <ul>
+                <li>Highly qualified faculty with Ph.D. degrees for college programs</li>
+                <li>Experienced teachers with B.Ed and M.Ed degrees for school programs</li>
+                <li>Active involvement in research and publication in top journals</li>
+                <li>Visiting faculty from renowned global universities</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Admission Process</h2>
+            <h3>Eligibility Criteria:</h3>
+            <ul>
+                <li><strong>School:</strong>
+                    <ul>
+                        <li>Primary School: Age 5+ at the time of admission</li>
+                        <li>Middle School: Promotion from the previous grade</li>
+                        <li>High School: Minimum 60% in Grade 8 for Grade 9 admission</li>
+                    </ul>
+                </li>
+                <li><strong>College:</strong>
+                    <ul>
+                        <li>Undergraduate: 10+2 with minimum 60% marks</li>
+                        <li>Postgraduate: Bachelor’s degree with minimum 55% marks</li>
+                        <li>Doctoral: Master’s degree with minimum 60% marks</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Entrance Exams:</h3>
+            <ul>
+                <li><strong>School:</strong> Not applicable for primary and middle school; entrance test for high school</li>
+                <li><strong>College:</strong>
+                    <ul>
+                        <li>Undergraduate: JEE, NEET</li>
+                        <li>Postgraduate: CAT, GATE</li>
+                        <li>Doctoral: University-specific entrance test followed by an interview</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Application Procedure:</h3>
+            <ul>
+                <li>Online application through the official IASI website</li>
+                <li>Submission of required documents and application fee</li>
+                <li>Important dates for application opening, closing, and exam schedules</li>
+            </ul>
+            <h3>Selection Process:</h3>
+            <ul>
+                <li>School: Based on previous academic performance and entrance test for high school</li>
+                <li>College: Based on entrance exam scores and academic performance, personal interview for postgraduate and doctoral programs</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Fee Structure</h2>
+            <h3>Tuition Fees:</h3>
+            <ul>
+                <li><strong>School:</strong>
+                    <ul>
+                        <li>Primary School: ₹50,000 per annum</li>
+                        <li>Middle School: ₹70,000 per annum</li>
+                        <li>High School: ₹90,000 per annum</li>
+                    </ul>
+                </li>
+                <li><strong>College:</strong>
+                    <ul>
+                        <li>Undergraduate: ₹1,50,000 per annum</li>
+                        <li>Postgraduate: ₹2,00,000 per annum</li>
+                        <li>Doctoral: ₹1,00,000 per annum</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Additional Costs:</h3>
+            <ul>
+                <li>Lab fees, library fees, and other miscellaneous expenses (approx. ₹20,000 per annum for both school and college)</li>
+            </ul>
+            <h3>Scholarships and Financial Aid:</h3>
+            <ul>
+                <li>Merit-based scholarships covering up to 100% of tuition fees</li>
+                <li>Need-based financial aid available</li>
+                <li>Special scholarships for reserved category students and athletes</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Campus Facilities</h2>
+            <h3>Infrastructure:</h3>
+            <ul>
+                <li>Modern classrooms with smart technology</li>
+                <li>Well-equipped laboratories for practical learning</li>
+                <li>Extensive library with a vast collection of books and e-resources</li>
+            </ul>
+            <h3>Accommodation:</h3>
+            <ul>
+                <li>On-campus hostels with single, double, and triple occupancy rooms</li>
+                <li>Amenities include Wi-Fi, study rooms, common areas, and 24/7 security</li>
+            </ul>
+            <h3>Dining:</h3>
+            <ul>
+                <li>Multiple mess facilities offering diverse cuisines</li>
+                <li>Hygienic and nutritious food options</li>
+            </ul>
+            <h3>Healthcare:</h3>
+            <ul>
+                <li>On-campus medical center with qualified doctors and nurses</li>
+                <li>24/7 emergency services and tie-ups with nearby hospitals</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Student Life</h2>
+            <h3>Clubs and Societies:</h3>
+            <

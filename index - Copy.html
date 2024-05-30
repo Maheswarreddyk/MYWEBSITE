@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduConnect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('edu2.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            color: #333;h
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            background-color: #f8f9fa;
+            top: 50px;
+            left: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            background-color: #e0e0e0;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .search-bar {
+                flex-grow: 0;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+        .results {
+            margin: 20px;
+        }
+
+        .result-item {
+            margin: 10px 0;
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        h3 {
+            background-color: aquamarine;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1 style="text-align: center; font-family: 'Arial', sans-serif; color: #007bff; margin-top: 50px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+        Welcome to <b style="color: yellowgreen;">EduConnect</b> Services
+    </h1>
+    
+    <nav>
+        <button class="menu-button" onclick="toggleMenu()">☰</button>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for institutions...">
+            <button onclick="searchInstitution()">Go</button>
+        </div>
+        <div class="menu" id="menu">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="results" id="results"></div>
+
+    <div>
+        <h3>Key Features</h3>
+        <p style="font-style: oblique;">
+            More Choices: Access a vast database of educational institutions from around the world, giving you a wide array of options to choose from.<br>
+            Less Effort: Save time with our streamlined search and comparison tools. All the information you need is at your fingertips, eliminating the hassle of visiting multiple websites.<br>
+            No Bargaining Needed: We provide transparent and comprehensive details upfront, so you can make decisions with confidence and without the need to negotiate.
+        </p>
+    </div>
+   
+    <div>
+        <h3>How it Works</h3>
+        <p style="font-family: 'Times New Roman', Times, serif;">
+            EduConnect makes finding the right institution easy:<br>
+            Search for Institutions: Use our powerful search engine to filter institutions based on your preferences, such as location, academic programs, and more.<br>
+            Compare Detailed Information: Access comprehensive profiles, including tuition fees, accommodation options, sports facilities, and student support services.<br>
+            Connect with Your Chosen Institution: Get in touch with institutions             directly through our platform to ask questions, request additional information, and begin the application process.
+        </p>
+    </div>
+
+    <div>
+        <h3>Exclusive Offers</h3>
+        <p>
+            Get up to 50% off your joining fee by signing up through EduConnect. Take advantage of this limited-time offer and gain access to detailed institution profiles and exclusive insights.
+        </p>
+    </div>
+
+    <div>
+        <h3>Follow Us</h3>
+        <p>
+            Stay connected with EduConnect through our social media channels for the latest updates, news, and exclusive offers:
+            <ol>
+                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                <li><a href="https://x.com/i/flow/login?lang=en">X (Twitter)</a></li>
+                <li><a href="https://www.instagram.com/accounts/login/">Instagram</a></li>
+            </ol>
+        </p>
+    </div>
+    <script>
+        const institutions = [
+            { name: 'Gopi krishna', detailsPage: 'GopiKrishnaSchool.html', pincode: '516175' },
+            { name: 'Sri Chaitanya', detailsPage: 'SriChaitanyapdtr.html', pincode: '516175' },
+            // Add more institutions with pincode information
+        ];
+
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        function searchInstitution() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+            
+            if (query.length === 0) {
+                resultsDiv.textContent = 'Please enter a search term.';
+                return;
+            }
+
+            const uniquePincodes = [...new Set(institutions.map(inst => inst.pincode))];
+            const filteredByPincode = uniquePincodes.filter(pin => pin.includes(query));
+            if (filteredByPincode.length > 0) {
+                filteredByPincode.forEach(pin => {
+                    const div = document.createElement('div');
+                    div.className = 'result-item';
+                    div.textContent = pin;
+                    div.onclick = () => displaySchoolsByPincode(pin);
+                    resultsDiv.appendChild(div);
+                });
+                return;
+            }
+
+            const filteredByName = institutions.filter(inst => inst.name.toLowerCase().includes(query));
+            if (filteredByName.length === 0) {
+                resultsDiv.textContent = 'No matching institutions found. Please refine your search.';
+                return;
+            }
+            
+            filteredByName.forEach(inst => {
+                const div = document.createElement('div');
+                div.className = 'result-item';
+                div.textContent = inst.name;
+                div.onclick = () => window.location.href = inst.detailsPage;
+                resultsDiv.appendChild(div);
+            });
+        }
+
+        function displaySchoolsByPincode(pincode) {
+            const schools = institutions.filter(inst => inst.pincode === pincode);
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+            if (schools.length > 0) {
+                schools.forEach(school => {
+                    const div = document.createElement('div');
+                    div.className = 'result-item';
+                    div.textContent = school.name;
+                    div.onclick = () => window.location.href = school.detailsPage;
+                    resultsDiv.appendChild(div);
+                });
+            } else {
+                resultsDiv.textContent = 'No schools found for this pincode.';
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('input', searchInstitution);
+    </script>
+</body>
+</html>
+
